@@ -13,15 +13,15 @@
 		<div class="container"> 
 			<div class='jumbotron'> 
 				<center><h1>Let's Have Fun!</h1> 
-					<button id="btn1">#btn1</button> 
-					<button id="btn2">#btn2</button> 
-					<button id="btn3">#btn3</button> 
-					<button id="btn4">#btn4</button> 
+					<button class="panel-button" data-panelid="panel1">#btn1</button> 
+					<button class="panel-button"  data-panelid="panel2">#btn2</button> 
+					<button class="panel-button" data-panelid="panel3">#btn3</button> 
+					<button class="panel-button" data-panelid="panel4">#btn4</button> 
 				</center> 
 			</div> 
 				<div class="row"> 
-					<div class="col-xs-3"> 
-						<div id="panel1" class="panel panel-primary"> 
+					<div class="col-xs-3" > 
+						<div id="panel1" class="panel panel-primary" > 
 							<div class="panel-heading"> #panel1 </div> 
 							<div class="panel-body">content </div> 
 						</div> 
@@ -35,7 +35,7 @@
 					</div> 
 						
 					<div class="col-xs-3"> 
-						<div id="panel3" class="panel panel-primary"> 
+						<div id="panel3"  class="panel panel-primary"> 
 							<div class="panel-heading"> #panel3 </div> 
 							<div class="panel-body">content </div> 
 						</div> 
@@ -52,10 +52,58 @@
 
 		<script >
 			$(function() {
-				$('#panel2').hide(2000);
-				$('#panel1').css({
-					opacity: '0.5'
+				// $('#panel2').hide();
+				// $('#panel1').css({
+				// 	color:'red', 
+				// 	font-Weight:'bold',
+				// 	display = 'none'
+				// });
+			var item = "My new awesome content";
+				$('.panel-button').on('mouseover', function() {
+					var panelId = $(this).attr('data-panelid');
+					$('#'+panelId).toggle();
+					$('#'+panelId+ ' .panel-body').html(item);
+
 				});
+
+				// $('#btn1').on('mouseover', function() {
+				// 		$('#panel1').toggle();
+				// });
+
+				// $('#btn2').on('mouseover', function() {
+				// 		$('#panel2').toggle();
+				// });
+
+				// $('#btn3').on('mouseover', function() {
+				// 		$('#panel3').toggle();
+				// });
+
+				// $('#btn4').on('mouseover', function() {
+				// 		$('#panel4').toggle();
+				// });
+
+				// $('#btn2').on('mouseover', function() {
+				// 	$('#panel2').fadeOut(1000);
+				// });
+				// $('#btn3').on('mouseover', function() {
+				// 	$('#panel3').fadeOut(1000);
+				// });
+				// $('#btn4').on('mouseover', function() {
+				// 	$('#panel4').fadeOut(1000);
+				// });
+
+				// $('#btn1').on('click', function() {
+				// 	$('#panel1').fadeIn(1000);
+				// });
+				// $('#btn2').on('click', function() {
+				// 	$('#panel2').fadeIn(1000);
+				// });
+				// $('#btn3').on('click', function() {
+				// 	$('#panel3').fadeIn(1000);
+				// });
+				// $('#btn4').on('click', function() {
+				// 	$('#panel4').fadeIn(1000);
+				// });
 
 
 			});
